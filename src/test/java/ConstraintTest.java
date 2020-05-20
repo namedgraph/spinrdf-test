@@ -38,6 +38,7 @@ public class ConstraintTest {
         SPINModuleRegistry.get().init();
         ARQFactory.get().setUseCaches(false);
 
+        // the ontology URI is mapped in location-mapping.n3 to src/main/com/atomgraph/processor/http-tests/custom/ontology.ttl
         ontModel = OntDocumentManager.getInstance().getOntology("https://github.com/AtomGraph/Processor/blob/develop/http-tests/custom#", OntModelSpec.OWL_MEM);
         //ontModel.writeAll(System.out, "TURTLE");
         
