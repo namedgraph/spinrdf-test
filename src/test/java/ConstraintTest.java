@@ -65,7 +65,7 @@ public class ConstraintTest {
             Query query = QueryFactory.create(queryString);
             QueryExecution qex = QueryExecutionFactory.create(query, ontModel, qsm);
             ResultSet results = qex.execSelect();
-            //
+            
             assertEquals(0, ResultSetFormatter.consume(results));
         }
         catch (IOException ex)
