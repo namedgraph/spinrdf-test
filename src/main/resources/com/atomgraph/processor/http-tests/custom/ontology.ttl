@@ -1,0 +1,45 @@
+
+@base         <https://github.com/AtomGraph/Processor/blob/develop/http-tests/custom> .
+
+@prefix :     <#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix sp:   <http://spinrdf.org/sp#> .
+@prefix spin: <http://spinrdf.org/spin#> .
+@prefix spl:  <http://spinrdf.org/spl#> .
+
+: a owl:Ontology ;
+    owl:imports sp:, spin: ;
+    rdfs:label "Test ontology" .
+
+# queries
+
+:DefaultSubjectQueryTemplate a spin:Template ;
+    rdfs:label "Default subject query template" ;
+    spin:body :DefaultSubjectQuery ;
+    rdfs:isDefinedBy : .
+
+:DefaultSubjectQuery a sp:Describe ;
+    rdfs:label "Default subject query" ;
+    sp:text """CONSTRUCT
+{
+    ?this <http://example.com/default-predicate> ?object
+}
+{
+    ?this <http://example.com/default-predicate> ?object
+}""" ;
+    rdfs:isDefinedBy : .
+
+:DefaultSubjectUpdateTemplate a spin:Template ;
+    rdfs:label "Default subject update template" ;
+    spin:body :DefaultSubjectUpdate ;
+    rdfs:isDefinedBy : .
+
+:DefaultSubjectUpdate a sp:Delete ;
+    rdfs:label "Default subject update" ;
+    sp:text """DELETE WHERE
+{
+    ?this <http://example.com/default-predicate> ?object
+}""" ;
+    rdfs:isDefinedBy : .

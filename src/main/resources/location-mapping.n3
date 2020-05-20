@@ -1,0 +1,12 @@
+@prefix lm: <http://jena.hpl.hp.com/2004/08/location-mapping#> .
+
+[] lm:mapping
+
+   [ lm:name "https://github.com/AtomGraph/Processor/blob/develop/http-tests/custom#" ; lm:altName "com/atomgraph/processor/http-tests/custom/ontology.ttl" ],
+   [ lm:name "http://spinrdf.org/sp#" ;                                         lm:altName "etc/sp.ttl" ] ,
+   [ lm:name "http://spinrdf.org/sp" ;                                          lm:altName "etc/sp.ttl" ] ,
+   [ lm:name "http://spinrdf.org/spin#" ;                                       lm:altName "etc/spin.ttl" ] ,
+   [ lm:name "http://spinrdf.org/spin" ;                                        lm:altName "etc/spin.ttl" ] ,
+   [ lm:name "http://spinrdf.org/spl#" ;                                        lm:altName "etc/spl.spin.ttl" ] ,
+   [ lm:name "http://spinrdf.org/spl" ;                                         lm:altName "etc/spl.spin.ttl" ]
+.

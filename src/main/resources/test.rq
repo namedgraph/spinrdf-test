@@ -1,0 +1,16 @@
+SELECT  ?this ?predicate ?objCount ?minCount ?maxCount
+WHERE
+  { ?this  a                     ?TYPE_CLASS
+      { BIND(<http://spinrdf.org/spl#objectCount>(?this, ?predicate) AS ?objCount)
+        FILTER ( bound(?minCount) && ( ?objCount < ?minCount ) )
+      }
+    UNION
+      { BIND(<http://spinrdf.org/spl#objectCount>(?this, ?predicate) AS ?objCount)
+        FILTER ( bound(?maxCount) && ( ?objCount > ?maxCount ) )
+      }
+    UNION
+      { FILTER bound(?valueType)
+        ?this  ?predicate  ?value
+        FILTER ( ! <http://spinrdf.org/spl#instanceOf>(?value, ?valueType) )
+      }
+  }
